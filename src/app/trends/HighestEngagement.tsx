@@ -1,6 +1,5 @@
 "use client";
-import React from 'react';
-import styles from './HighestEngagement.module.css';
+import styles from './highestEngagement.module.css';
 
 interface Influencer {
   handle: string;

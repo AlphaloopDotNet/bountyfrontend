@@ -1,33 +1,33 @@
-import { NextAuthOptions } from 'next-auth';
-import CredentialsProvider from 'next-auth/providers/credentials';
-import { PrismaAdapter } from '@next-auth/prisma-adapter';
-import { prisma } from './prisma';
-import bcrypt from 'bcryptjs';
+import { NextAuthOptions } from "next-auth";
+import CredentialsProvider from "next-auth/providers/credentials";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import { prisma } from "./prisma";
+import bcrypt from "bcryptjs";
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
 
   session: {
-    strategy: 'jwt',
+    strategy: "jwt",
     maxAge: 7 * 24 * 60 * 60, // 7 days
   },
 
   pages: {
-    signIn: '/login',
-    error: '/login',
+    signIn: "/login",
+    error: "/login",
   },
 
   providers: [
     CredentialsProvider({
-      name: 'credentials',
+      name: "credentials",
       credentials: {
-        email: { label: 'Email', type: 'email' },
-        password: { label: 'Password', type: 'password' },
+        email: { label: "Email", type: "email" },
+        password: { label: "Password", type: "password" },
       },
 
       async authorize(credentials, req) {
         if (!credentials?.email || !credentials?.password) {
-          throw new Error('Email and password are required');
+          throw new Error("Email and password are required");
         }
 
         // Fetch user + their profile in one query
@@ -40,26 +40,29 @@ export const authOptions: NextAuthOptions = {
         });
 
         if (!user || !user.password) {
-          throw new Error('No account found with this email');
+          throw new Error("No account found with this email");
         }
 
-        if (user.status === 'suspended') {
-          throw new Error('Your account has been suspended');
+        if (user.status === "suspended") {
+          throw new Error("Your account has been suspended");
         }
 
-        const isValid = await bcrypt.compare(credentials.password, user.password);
+        const isValid = await bcrypt.compare(
+          credentials.password,
+          user.password,
+        );
         if (!isValid) {
-          throw new Error('Incorrect password');
+          throw new Error("Incorrect password");
         }
 
         // Log the login event
         await prisma.authSession.create({
           data: {
             userId: user.id,
-            event: 'login',
-            provider: 'email',
-            ipAddress: req.headers?.['x-forwarded-for']?.toString() || null,
-            userAgent: req.headers?.['user-agent'] || null,
+            event: "login",
+            provider: "email",
+            ipAddress: req.headers?.["x-forwarded-for"]?.toString() || null,
+            userAgent: req.headers?.["user-agent"] || null,
           },
         });
 
@@ -88,20 +91,20 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.id       = user.id;
-        token.role     = (user as any).role;
-        token.status   = (user as any).status;
-        token.subType  = (user as any).subType;
+        token.id = user.id;
+        token.role = user.role; // ← no more 'as any'
+        token.status = user.status;
+        token.subType = user.subType;
       }
       return token;
     },
 
     async session({ session, token }) {
       if (session.user) {
-        session.user.id      = token.id as string;
-        session.user.role    = token.role as string;
-        session.user.status  = token.status as string;
-        session.user.subType = token.subType as string | null;
+        session.user.id = token.id;
+        session.user.role = token.role;
+        session.user.status = token.status;
+        session.user.subType = token.subType;
       }
       return session;
     },
