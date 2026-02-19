@@ -1,0 +1,158 @@
+.insightsPage {
+  background-color: #f8fafc;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: var(--font-main); /* Comfortaa */
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mainTitle {
+  font-family: var(--font-heading); /* Blacklisted */
+  color: #CC3333;
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+/* 2-Column Grid matching the screenshot */
+.chartGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Responsive: 1 column on mobile */
+@media (max-width: 768px) {
+  .chartGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card Design: Glassy white with rounded corners */
+.card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cardTitle {
+  font-size: 15px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.infoIcon {
+  color: #ccc;
+  font-size: 12px;
+  cursor: help;
+}
+
+.cardBody {
+  height: 220px; /* Standardized height for charts */
+  width: 100%;
+  position: relative;
+}
+
+/* Pie Chart Specifics */
+.pieContainer {
+  height: 100%;
+  position: relative;
+}
+
+.pieOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overlayLabel { font-size: 10px; color: #666; font-weight: 700; }
+.overlayValue { font-size: 18px; color: #000; font-weight: 900; }
+
+/* MapPing for Location card */
+.mapWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.mapImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.6;
+}
+
+/* Full Width for last row if needed */
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.backButton {
+  display: block;
+  margin: 40px auto;
+  padding: 15px 40px;
+  background: #FBBF24;
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  font-weight: 900;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.backButton:hover {
+  transform: scale(1.02);
+}
+
+.mainTitle {
+  font-family: 'Blacklisted', sans-serif !important;
+  color: #CC3333; /* Pure Red from design */
+  text-align: center;
+  font-size: 42px; /* Thoda bada like screenshot */
+  text-transform: uppercase;
+  letter-spacing: 1px; /* Letters ko paas lao original design jaisa */
+  margin: 20px 0 40px 0;
+  font-weight: normal; /* Blacklisted font khud hi heavy hota hai */
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 40px; /* Increase this to match the screenshot's soft look */
+  padding: 30px;
+  border: 1px solid #f2f2f2;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+  margin-bottom: 20px;
+}
+.cardTitle {
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 15px;
+  color: #000;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+}

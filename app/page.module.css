@@ -1,0 +1,344 @@
+
+
+/* --- Custom Fonts Registration --- */
+@font-face {
+  font-family: 'Blacklisted';
+  src: url('/fonts/Blacklisted.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ComfortaaBold';
+  src: url('/fonts/Comfortaa-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ComfortaaRegular';
+  src: url('/fonts/Comfortaa-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ComfortaaLight';
+  src: url('/fonts/Comfortaa-Light.ttf') format('truetype');
+}
+
+/* Splash screen ka logo ekdum beech mein laane ke liye */
+.splashContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.splashLogo {
+  width: 280px; /* Splash logo thoda bada rakha hai */
+  height: auto;
+  animation: fadeIn 1.5s ease-in-out; /* Halka sa animation entry ke liye */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+.logoImage {
+  width: 220px; /* Pehle 160px tha, ab bada kiya */
+  height: auto;
+}
+.logoImageSmall {
+  width: 220px; /* Bounty logo bhi bada kiya */
+  height: auto;
+  margin-top: 15px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; 
+  height: 100vh;
+  padding: 30px 0 20px 0;
+  background: #ffffff;
+}
+
+.brandBtn {
+  font-family: 'ComfortaaBold', sans-serif;
+  background-color: #e32933;
+  color: #ffffff;
+  border: none;
+  width: 350px; /* Heading se badi width */
+  height: 60px; /* Height halki si choti ki */
+  border-radius: 12px;
+  font-size: 2.2rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: -50px;
+}
+.influencerRibbon {
+  font-family: 'Blacklisted', sans-serif;
+  text-transform: uppercase;
+  background-color: #262d33;
+  color: #f5eedc;
+  width: 350px; /* BRAND button ke barabar width */
+  height: 60px; /* BRAND button ke barabar height */
+  font-size: 2.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Outward Sharp Ribbon Shape */
+  clip-path: polygon(10% 50%, 0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
+  cursor: pointer;
+}
+.selectionWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: center;
+  gap: 80px; /* Buttons aur Heading ke beech tight space */
+}
+/* --- Footer (Screen ke ekdum bottom par) --- */
+.footerLinks {
+  font-family: 'ComfortaaLight', sans-serif;
+  display: flex;
+  gap: 15px;
+  font-size: 0.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* --- Image 2: Orange Gradient Background --- */
+.gradientBg {
+  background: linear-gradient(180deg, #f37055 0%, #ef4444 100%);
+}
+
+/* --- Logos & Typography --- */
+.threadsLogo {
+  font-size: 3.5rem;
+  color: #e11d48;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.threadsLogoWhite {
+  color: #ffffff;
+  font-size: 4rem;
+  font-style: italic;
+  margin-bottom: 60px;
+}
+
+.threadsLogoSmall {
+  color: #e11d48;
+  font-size: 2.8rem;
+  font-style: italic;
+  margin-bottom: 80px;
+}
+
+.bountyLogo, .bountyFooter {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #374151;
+}
+
+.bountyLogo span, .bountyFooter span {
+  color: #e11d48;
+}
+
+.ampersand {
+  font-size: 2.5rem;
+  color: #e11d48;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.pageHeading {
+  font-family: 'ComfortaaBold', sans-serif;
+  font-size: 1.6rem; /* Size kam kiya */
+  font-weight: 700;
+  color: #2d3436;
+  margin-bottom: 5px;
+  letter-spacing: -0.2px;
+}
+
+.headingRed {
+  color: #e32933;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+
+.brandBtn:hover {
+  opacity: 0.9;
+}
+
+.whiteBtn {
+  background: #ffffff;
+  color: #e32933;
+  border: none;
+  padding: 15px 0;
+  width: 280px;
+  border-radius: 15px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+
+
+.influencerRibbon:active {
+  transform: scale(0.96); /* Click feel */
+}
+
+.optionsStack {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 320px;
+}
+
+.optionItem {
+  background-color: #e32933;
+  color: #ffffff;
+  border: none;
+  padding: 18px 25px;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.icon {
+  font-size: 1.8rem;
+}
+
+/* --- Footer --- */
+.miniFooter {
+  position: absolute;
+  bottom: 20px;
+  font-size: 0.85rem;
+  color: #6b7280;
+  letter-spacing: 0.5px;
+}
+
+/* --- Login Form Specific Styles --- */
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 320px;
+  gap: 15px;
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 1.5px solid #f37055; /* Orange-red border like Image 4 */
+  border-radius: 12px;
+  padding: 8px 15px;
+  background: white;
+}
+
+.inputIcon {
+  font-size: 1.2rem;
+  margin-right: 15px;
+  color: #333;
+}
+
+.loginInput {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 10px 0;
+  color: #1f2937;
+}
+
+.loginSubmitBtn {
+  background-color: #e32933;
+  color: white;
+  border: none;
+  padding: 15px 0;
+  width: 100%;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.forgotLink {
+  align-self: flex-end;
+  color: #374151;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.forgotLink:hover {
+  text-decoration: underline;
+}
+
+/* --- Footer Alignment --- */
+
+
+.link {
+  text-decoration: none;
+  border-bottom: 1px solid #333; /* Image jaisa underline effect */
+  color: inherit;
+  font-weight: 500;
+}
+
+/* =========================
+   SIDEBAR PAPER BACKGROUND
+========================= */
+
+.sidebarMenu {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100vh;
+
+  background:
+    linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.88)),
+    url('/images/blankpaper.png') center / cover;
+
+  box-shadow: 4px 0 12px rgba(0,0,0,0.25);
+  transition: 0.3s ease;
+  z-index: 100;
+}
+
+.sidebarActive {
+  left: 0;
+}
+
+
+.sidebarMenu {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100vh;
+
+  /* 👇 PAPER BACKGROUND YAHI LAGEGA */
+  background:
+    linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+    url('/images/blankpaper.png') center / cover no-repeat;
+
+  box-shadow: 4px 0 12px rgba(0,0,0,0.25);
+  transition: 0.3s ease;
+  z-index: 100;
+}
+
+.sidebarActive {
+  left: 0;
+}

@@ -1,0 +1,188 @@
+/* thlog.module.css */
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerSection {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.logoWrapper {
+  position: relative;
+  width: 180px;
+  height: 90px;
+}
+
+.loginCard {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 25px;
+}
+
+.signTitle {
+  color: #d1212a;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 35px;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.formStack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.inputGroup {
+  width: 100%;
+  height: 55px;
+  border: 1px solid #d1212a; /* Red border like image */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.iconBox {
+  width: 25px;
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.fieldIcon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.inputField {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  color: #333;
+}
+
+.inputField::placeholder {
+  color: #666;
+}
+
+.loginBtn {
+  width: 100%;
+  background-color: #d1212a;
+  color: white;
+  height: 55px;
+  border-radius: 12px;
+  border: none;
+  font-size: 22px;
+  margin-top: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.forgotPass {
+  align-self: flex-end;
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.socialSection {
+  margin-top: 50px;
+  width: 100%;
+  text-align: center;
+}
+
+.signUpWith {
+  color: #d1212a;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.socialBtns {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+}
+
+.socialBtn {
+  flex: 1;
+  background: white;
+  border: 1px solid #d1212a;
+  border-radius: 12px;
+  height: 45px;
+  color: #d1212a;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: 80px;
+  padding-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.fLink {
+  color: #333;
+  text-decoration: underline;
+}
+
+.divider { color: #ccc; }
+
+
+/* Add these new classes */
+.message {
+  padding: 12px;
+  border-radius: 8px;
+  margin: 12px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.error {
+  background: #fee;
+  color: #c33;
+  border: 1px solid #fcc;
+}
+
+.success {
+  background: #efe;
+  color: #3c3;
+  border: 1px solid #cfc;
+}
+
+.loginText {
+  text-align: center;
+  margin: 20px 0;
+  color: #666;
+}
+
+.loginLink {
+  color: #0095f6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.loginLink:hover {
+  text-decoration: underline;
+}

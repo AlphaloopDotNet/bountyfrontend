@@ -1,0 +1,143 @@
+/* signth2.module.css */
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerSection {
+  width: 100%;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.logoWrapper {
+  position: relative;
+  width: 180px;
+  height: 90px;
+}
+
+.registerCard {
+  width: 100%;
+  max-width: 400px; /* Saare boxes isi width mein rahenge */
+  padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pageTitle {
+  color: #d1212a; 
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 35px;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.formStack {
+  width: 100%; /* Form poori width lega */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* --- FIXED WIDTH PHONE BOX --- */
+.phoneInputGroup {
+  display: flex;
+  align-items: center;
+  width: 100%; /* Baaki inputs jaisa 100% width */
+  border: 1px solid #f0a08d;
+  border-radius: 12px;
+  height: 55px;
+  background: white;
+  box-sizing: border-box; /* Padding ko width ke andar rakhega */
+  padding: 0 15px;
+}
+
+.countryCode {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 10px;
+}
+
+.flag {
+  width: 20px;
+  height: auto;
+}
+
+.codeText {
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.arrow {
+  font-size: 10px;
+  color: #888;
+}
+
+.verticalDivider {
+  width: 1px;
+  height: 25px;
+  background-color: #f0a08d;
+  margin-right: 15px;
+}
+
+.inlineInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background: transparent;
+  color: #333;
+  width: 100%;
+}
+
+/* --- OTHER INPUTS --- */
+.inputFieldFull {
+  width: 100%; /* Same width */
+  border: 1px solid #f0a08d;
+  border-radius: 12px;
+  padding: 0 15px;
+  font-size: 18px;
+  outline: none;
+  height: 55px;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.inputFieldFull::placeholder, .inlineInput::placeholder {
+  color: #888;
+}
+
+.registerBtn {
+  width: 100%;
+  background-color: #d1212a; 
+  color: white;
+  height: 55px;
+  border-radius: 12px;
+  border: none;
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.loginText {
+  margin-top: 25px;
+  font-size: 15px;
+  color: #666;
+}
+
+.loginLink {
+  color: #000;
+  text-decoration: underline;
+  font-weight: 500;
+}

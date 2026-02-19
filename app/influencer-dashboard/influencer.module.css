@@ -1,0 +1,733 @@
+/* Puray page ka base font */
+.paperBody {
+  font-family: var(--font-main); /* Comfortaa font */
+  background: url("/images/blankpaper.jpg") center / cover fixed no-repeat;
+  min-height: 100vh;
+}
+
+/* Navbar center logo ya text agar ho */
+.navCenter {
+  font-family: var(--font-heading); /* Blacklisted */
+}
+
+/* Filter Bar ke tabs (BRANDS, TYPE, PLATFORM) */
+.filterTab {
+  font-family: var(--font-heading);
+  cursor: pointer;
+  font-size: 14px;
+  /* position: relative inline style me laga hai, wo sahi hai */
+}
+/* Dropdown ke andar ka text */
+.vintageDropdown p {
+  padding: 10px 15px;
+  margin: 0;
+  border-bottom: 1px solid #2d3436;
+  font-family: var(--font-main);
+  font-size: 12px;
+  text-align: left;
+}
+.vintageDropdown {
+  position: absolute;
+  background-color: #fdf6e3; /* Vintage paper color */
+  border: 2px solid #2d3436;
+  box-shadow: 5px 5px 0px #2d3436;
+  width: max-content;
+  min-width: 130px;
+  z-index: 1000;
+  margin-top: 5px;
+}
+/* Campaign Hashtag (#SLICEKIPETI) */
+.titleHashtag {
+  font-family: var(--font-heading) !important;
+  font-size: 26px; /* Heading badi honi chahiye */
+  text-align: center;
+  margin: 15px 0;
+  letter-spacing: 2px;
+}
+
+.infoText p {
+  font-family: var(--font-main); /* Comfortaa */
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+  font-weight: 600; /* Thoda bold feel ke liye */
+}
+
+/* Validity Date */
+.dateInfo {
+  font-family: var(--font-main);
+  font-weight: 700; /* Comfortaa Bold use hoga */
+  font-size: 13px;
+}
+
+/* Prize Container */
+.prizeContainer {
+  font-family: var(--font-heading) !important;
+  background: #e13a42;
+  color: #fff;
+  padding: 12px 25px;
+  font-size: 22px;
+  text-align: center;
+  width: fit-content;
+  margin: 25px auto;
+  letter-spacing: 2px;
+}
+/* Buttons (APPLY & FAQ) */
+.applyBtn, .faqBtn {
+  font-family: var(--font-heading) !important;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Slider Counter (1/2) */
+.counter {
+  font-family: var(--font-heading);
+  font-size: 20px;
+}
+
+.applyBtn {
+  font-family: var(--font-heading) !important; /* Blacklisted Font */
+  background: #e13a42 !important; /* Strong Red */
+  color: #ffffff !important;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  /* Vintage feel ke liye shadow */
+  box-shadow: 2px 2px 0px #000; 
+  transition: all 0.2s ease;
+}
+
+.applyBtn:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
+
+.faqBtn {
+  font-family: var(--font-heading) !important;
+  background: transparent;
+  border: 1.5px solid #000;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+
+.navbar {
+  height: 60px;
+  /* 🔥 Background image yaha add karein */
+  background: url('/images/blankpaper.jpg') center/cover no-repeat; 
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+
+.navLeft,
+.navRight {
+  display: flex;
+  align-items: center;
+}
+
+.burgerBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.burgerLine {
+  width: 20px;
+  height: 2px;
+  background: #000;
+  margin: 4px 0;
+}
+
+
+
+
+.targetIcon {
+  margin: 0 2px;
+}
+
+.profileCircle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.profileCircle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- FILTER BAR ---------- */
+.filterBar {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0;
+  border-bottom: 2px solid #2d3436;
+  position: relative; /* Safety for child positioning */
+}
+
+.dropdown {
+  position: absolute;
+  top: 22px;
+  left: 0;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  padding: 8px;
+  z-index: 10;
+}
+
+.dropdown p {
+  padding: 6px 10px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.dropdown p:hover {
+  background: #f1f1f1;
+}
+
+/* ---------- MAIN CONTENT ---------- */
+.mainContainer {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bountyCard {
+  background: transparent;
+  box-shadow: none;
+}
+
+.brandBranding {
+  display: flex;
+  justify-content: center; /* Logo center mein aayega */
+  margin-bottom: 15px;
+}
+.brandIcon {
+  height: 50px; /* Size thoda bada kiya */
+  width: auto;
+  object-fit: contain;
+}
+/* ---------- IMAGE ---------- */
+.imageFrame {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 15px;
+  border: 2px solid #000; /* Frame look */
+  padding: 5px;
+  background: #fff;
+}
+.campaignImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.actionsRow {
+  display: flex;
+  justify-content: center; /* Sab kuch center mein */
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+.socialGroup {
+  display: flex;
+  gap: 12px;
+}
+.iconBtn {
+  background: #eee;
+  border: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.mainBtns {
+  display: flex;
+  gap: 6px;
+}
+
+
+.infoText {
+  text-align: center; /* Text center mein */
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+/* ---------- SLIDER ---------- */
+.swipeControls {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+}
+
+.arrowBtn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+
+
+
+.sidebarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebarLabel {
+  font-weight: bold;
+}
+
+
+
+/* ---------- BACKDROP ---------- */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 90;
+}
+
+/* Page Title Container */
+.sectionHeader {
+  text-align: center;
+  border-bottom: 2px solid #1a1a1a;
+  padding: 15px 0;
+  margin-bottom: 20px;
+}
+
+.sectionTitle {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+/* Grid Container */
+.brandsGridContainer {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* 2-Column Grid */
+.brandsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px; /* Space between boxes */
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Square Box for Logos */
+.brandBox {
+  border: 1px solid #1a1a1a;
+  aspect-ratio: 1 / 1; /* Perfect Square */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1); /* Slight contrast */
+}
+
+.brandGridLogo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.profileContainer { padding: 15px; }
+
+.profileTopSection { display: flex; gap: 20px; margin-bottom: 20px; }
+
+.avatarWrapper {
+  width: 120px; height: 120px; border-radius: 50%;
+  border: 4px solid #e13a42; position: relative; cursor: pointer;
+}
+
+.avatarMain { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+.uploadOverlay {
+  position: absolute; bottom: 5px; right: 5px;
+  background: #333; color: #fff; border-radius: 50%;
+  width: 25px; height: 25px; display: flex; align-items: center; justify-content: center;
+}
+
+.mainStatsBar {
+  display: flex; justify-content: space-between;
+  border-top: 1px solid #000; border-bottom: 1px solid #000;
+  padding: 10px 0; margin: 15px 0;
+}
+
+.statItem span { font-size: 12px; font-weight: bold; }
+.statItem p { font-size: 16px; font-weight: 900; margin: 0; }
+
+.platformCard {
+  border: 1px solid #1a1a1a; padding: 15px;
+  margin-top: 20px; position: relative;
+  background: rgba(255,255,255,0.05);
+}
+
+.engagementBadge {
+  position: absolute; right: -5px; top: 20px;
+  background: #333; color: #fff; font-size: 10px;
+  padding: 10px 5px; width: 90px; text-align: center;
+}
+
+.huntLabel { font-weight: 900; text-decoration: underline; margin-right: 20px; }
+
+
+
+
+/* Buttons Style */
+.formActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+/* Ribbon Style Buttons */
+.redRibbonBtn {
+  font-family: var(--font-heading) !important;
+  background: #e13a42 !important; /* Red color */
+  color: white !important;
+  border: none;
+  padding: 10px 40px;
+  font-weight: normal; 
+  font-size: 18px;
+  cursor: pointer;
+  /* Stylish "V" cut shape dono side */
+  clip-path: polygon(0 0, 100% 0, 92% 50%, 100% 100%, 0 100%, 8% 50%);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.greenRibbonBtn {
+  font-family: var(--font-heading) !important;
+  background: #2d8a3c !important; /* Success Green */
+  color: white !important;
+  border: none;
+  padding: 10px 40px;
+  font-size: 18px;
+  cursor: pointer;
+  clip-path: polygon(0 0, 100% 0, 92% 50%, 100% 100%, 0 100%, 8% 50%);
+}
+.thankYouBox {
+    background: rgba(0,0,0,0.05);
+    padding: 50px 20px;
+    border: 2px dashed #1a1a1a;
+}
+
+/* Success Tick Design */
+.successCircle {
+  width: 80px;
+  height: 80px;
+  background-color: #50e3c2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.tickMark {
+  color: white;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+/* Form Helper Text (Small Labels) */
+.inputWrap small {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 4px;
+  text-transform: uppercase;
+  color: #333;
+}
+
+/* Full Underline Style */
+.fullUnderline {
+  border: none !important;
+  border-bottom: 1.5px solid #000 !important;
+  background: transparent !important;
+  width: 100%;
+  padding: 8px 0 !important;
+  outline: none;
+}
+
+/* Navigation back to Dashboard from Thank You */
+.thankYouContainer {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* 🟢 Adding New Dropdown Styles from Images */
+.vintageDropdown {
+  position: absolute;
+  top: 100%; 
+  right: 0; 
+  width: 250px; 
+  background-color: #f4e4c1; /* Paper color from image */
+  border: 1.5px solid #000;
+  z-index: 1000; 
+  box-shadow: 6px 6px 0px rgba(0,0,0,0.1); 
+}
+
+
+
+.vintageDropdown p:last-child {
+  border-bottom: none;
+}
+
+.vintageDropdown p:hover {
+  background-color: #2d3436;
+  color: #fdf6e3;
+}
+
+/* link-profile */
+
+.logoMain {
+  height: 60px;       /* Is value ko badhao (e.g., 80px) size bada karne ke liye */
+  width: auto;        /* Width auto rakhein taaki logo stretch na ho */
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Hover effect ke liye (optional) */
+}
+
+/* Agar aap mobile par alag size chahte hain */
+@media (max-width: 480px) {
+  .logoMain {
+    height: 45px;     /* Mobile ke liye thoda chota size */
+  }
+}
+
+
+
+
+/* Profile */
+.profileCircleSmall {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profileCircleSmall img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+.mainContainer {
+  padding: 24px 20px 40px;
+}
+
+.bountyCard {
+  max-width: 500px;
+}
+
+/* =========================
+   DETAIL SECTIONS
+========================= */
+.detailSection {
+  margin-bottom: 26px;
+}
+
+.detailTitle {
+  font-family: "Blacklisted";
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.detailText {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 20;
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 480px) {
+  .detailTitle {
+    font-size: 16px;
+  }
+
+  .detailText {
+    font-size: 14px;
+  }
+}
+
+
+
+/* Mobile responsive sidebar */
+@media (max-width: 480px) {
+  .navLink {
+    font-size: 16px;
+    padding: 12px 15px;
+  }
+}
+CSS
+
+.sidebarContent {
+  height: 100vh;
+  /* Top padding kam karein taaki PLATFORM upar chipka rahe */
+  padding-top: 50px; 
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Scrollbar hata dein agar zaroorat nahi */
+}
+
+.navLinkItem {
+  width: 100%;
+}
+
+.navLink:hover {
+  color: #ef4444;
+}
+.logoutText {
+  color: #1a1a1a !important;
+  /* Logout ke baad line ki zaroorat nahi agar last hai */
+}
+
+.sidebarMenu {
+  position: fixed;
+  top: 0;
+  left: -100%; 
+  width: 320px; /* Isse width fix ho jayegi, poori screen nahi gherega */
+  height: 100vh;
+  background: url("/images/blankpaper.jpg") center / cover no-repeat;
+  background-color: #f4e4c1;
+  z-index: 9999 !important; 
+  transition: left 0.3s ease-in-out;
+  box-shadow: 10px 0 20px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Jab sidebar khula ho */
+.sidebarActive {
+  left: 0;
+}
+
+.sidebarInner {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+/* Burger Icon ko text se door karne ke liye */
+.closeSidebar {
+  padding: 15px 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  margin-bottom: 10px;
+}
+
+.linksContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.navLink {
+  /* Font issue fix karne ke liye generic sans-serif fallback rakhein */
+  font-family: 'Blacklisted', 'Arial Black', sans-serif !important;
+  font-weight: 900;
+  font-size: 24px;
+  color: #1a1a1a;
+  padding: 20px 25px 10px; /* Text aur line ke beech ka gap */
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Notebook Divider Line */
+.sidebarDivider {
+  height: 2px;
+  background-color: #000;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.logoutText {
+  color: #1a1a1a !important;
+}
+
+/* ---------- MOBILE RESPONSIVE SETTINGS ---------- */
+
+@media (max-width: 480px) {
+  .sidebarMenu {
+    width: 85%; /* Mobile par sidebar screen ka 85% cover karega */
+    max-width: 300px;
+  }
+
+  .navLink {
+    font-size: 18px; /* Mobile par font thoda chota taaki ek line mein aaye */
+    padding: 15px 20px 8px; /* Padding kam taaki screen space bache */
+    letter-spacing: 1px;
+  }
+
+  .closeSidebar {
+    padding: 15px 20px;
+  }
+
+  .sidebarDivider {
+    height: 1.2px; /* Patli line mobile ke liye */
+  }
+}
+
+/* Tablet ke liye */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .sidebarMenu {
+    width: 280px;
+  }
+}

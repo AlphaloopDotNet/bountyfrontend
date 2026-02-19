@@ -1,0 +1,175 @@
+/* apply.module.css */
+
+.applyContainer {
+  padding: 40px 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* --- Header Ribbon --- */
+.formHeaderRibbon {
+  background: #1a1a1a;
+  color: white;
+  padding: 12px 45px;
+  font-weight: 900;
+  clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+  width: fit-content;
+  margin: 0 auto 40px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.vintageForm { 
+  text-align: left; 
+}
+
+.formGroup { 
+  margin-bottom: 30px; 
+}
+
+.mainLabel {
+  font-weight: 900;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.required {
+  color: #e13a42;
+  margin-left: 3px;
+}
+
+/* --- Underline Input System --- */
+.underlineInput {
+  border: none;
+  border-bottom: 2px solid #1a1a1a;
+  background: transparent;
+  width: 100%;
+  padding: 8px 0;
+  font-family: inherit;
+  font-size: 17px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.underlineInput:focus {
+  border-bottom: 3px solid #e13a42; /* Sharp Red focus line */
+}
+
+/* --- Layout Grid for Row Inputs --- */
+.rowInputs { 
+  display: flex; 
+  gap: 20px; 
+}
+
+/* Mobile par inputs ek ke niche ek aayein uske liye */
+@media (max-width: 480px) {
+  .rowInputs {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.inputWrap { 
+  width: 100%; 
+}
+
+.subLabel { 
+  display: block;
+  font-size: 11px; 
+  font-weight: 700; 
+  text-transform: uppercase; 
+  margin-top: 5px;
+  color: #444;
+}
+
+/* --- Ribbon Buttons --- */
+.formActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  gap: 15px;
+}
+
+.faqRibbon, .submitRibbon {
+  color: white;
+  border: none;
+  padding: 10px 35px;
+  font-weight: 900;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  clip-path: polygon(0 0, 100% 0, 90% 50%, 100% 100%, 0 100%, 10% 50%);
+}
+
+.faqRibbon { background: #e13a42; }
+.submitRibbon { background: #2d8a3c; }
+
+.faqRibbon:hover, .submitRibbon:hover {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+}
+
+.faqRibbon:active, .submitRibbon:active {
+  transform: scale(0.95);
+}
+
+/* --- Thank You Screen --- */
+.thankYouContainer {
+  width: 100%;
+  max-width: 400px;
+  margin: 40px auto;
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.successCircle {
+  width: 90px;
+  height: 90px;
+  background-color: #50e3c2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 6px 15px rgba(80, 227, 194, 0.4);
+}
+
+.tickMark {
+  color: white;
+  font-size: 50px;
+  line-height: 1;
+}
+
+.thankYouText {
+  margin-top: 35px;
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.backBtn {
+  margin-top: 45px;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.backBtn:hover {
+  background: #333;
+}

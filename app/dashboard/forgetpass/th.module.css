@@ -1,0 +1,149 @@
+/* th.module.css */
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: white;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerSection {
+  width: 100%;
+  background-color: transparent;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.logoWrapper {
+  position: relative;
+  width: 150px;
+  height: 90px;
+}
+
+.loginCard {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 25px;
+}
+
+.signTitle {
+  color: #d1212a;
+  font-size: 32px;
+  font-weight: 500;
+  margin: 30px 0 10px 0;
+  font-family: 'Trebuchet MS', sans-serif;
+  text-align: center;
+}
+
+.instruction {
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 25px;
+  font-family: Arial, sans-serif;
+}
+
+.formStack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.inputGroup {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #f0a08d;
+  border-radius: 12px;
+  height: 55px;
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(2px); 
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.iconBox {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  width: 20px;
+}
+
+.fieldIcon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+}
+
+.inputField {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+}
+
+.loginBtn {
+  width: 100%;
+  background-color: #d1212a;
+  color: white;
+  height: 55px;
+  border-radius: 12px;
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 10px;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.resendBtn {
+  background: transparent;
+  border: none;
+  color: #666;
+  margin-top: 10px;
+  cursor: pointer;
+  text-decoration: underline;
+  font-family: Arial, sans-serif;
+}
+
+.backToLogin {
+  margin-top: 25px;
+  color: #d1212a;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.footer {
+  margin-top: 50px;
+  padding-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+}
+
+.fLink {
+  color: #666;
+  text-decoration: underline;
+}
+
+.divider {
+  color: #ccc;
+}

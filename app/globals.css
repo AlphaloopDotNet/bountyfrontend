@@ -1,0 +1,56 @@
+/* ========================================
+   CUSTOM FONTS REGISTRATION
+======================================== */
+
+/* 1. Blacklisted - Headings ke liye */
+@font-face {
+  font-family: 'Blacklisted';
+  src: url('/fonts/Blacklisted.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. Comfortaa - Light (Weight: 300) */
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('/fonts/Comfortaa-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 3. Comfortaa - Regular (Weight: 400) */
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('/fonts/Comfortaa-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 4. Comfortaa - Bold (Weight: 700) */
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('/fonts/Comfortaa-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========================================
+   ROOT VARIABLES (Puri App ke liye)
+======================================== */
+:root {
+  --font-main: 'Comfortaa', sans-serif;
+  --font-heading: 'Blacklisted', sans-serif;
+}
+
+body {
+  font-family: var(--font-main); /* By default puri app Comfortaa use karegi */
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .heading-style {
+  font-family: var(--font-heading); /* Headings ke liye Blacklisted */
+}

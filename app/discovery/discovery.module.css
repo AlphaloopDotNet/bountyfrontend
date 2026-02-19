@@ -1,0 +1,148 @@
+.pageContainer {
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: var(--font-main); /* Comfortaa */
+  color: #000;
+}
+
+.mainContent {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* "Showing top results..." text matching screenshot */
+.subHeaderText {
+  text-align: center;
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  letter-spacing: 0.5px;
+}
+
+/* --- Search Bar --- */
+.searchSection {
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.searchWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 20px 12px 45px;
+  font-size: 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-family: var(--font-main);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+/* --- 2-Column Grid Matching discover.jpeg --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 80px;
+  row-gap: 60px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* Exact Red Ring from Image */
+.imageRing {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  border: 3px solid #E13A42; /* Pure red from logo */
+  padding: 4px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.profileImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* --- Name & Handle --- */
+.name {
+  font-family: var(--font-heading) !important; /* Blacklisted Font */
+  font-size: 24px; /* Screenshot ke hisaab se thoda bada */
+  color: #000;
+  margin: 0;
+  line-height: 1;
+  text-transform: uppercase; /* Force uppercase to fix font weirdness */
+  letter-spacing: 0.5px;
+}
+.handle {
+  font-family: var(--font-main); /* Handle hamesha Comfortaa mein rakho */
+  font-size: 11px;
+  color: #888;
+  margin: 0px 0 15px 0;
+  font-weight: 500;
+}
+/* Bio styling (Centered & Compact) */
+.bio {
+  font-family: var(--font-main);
+  font-size: 13px;
+  color: #1a1a1a;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-weight: 600;
+  max-width: 280px;
+  min-height: 40px; /* Aligns cards if bio is short */
+}
+/* Followers Section with Black Icon */
+.followers {
+  font-family: var(--font-main);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 13px;
+  color: #000;
+}
+.emoji {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  /* Screenshot mein silhouette icon hai, emoji ki jagah image use kar sakte ho */
+  filter: brightness(0); 
+}
+
+
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+  }
+}

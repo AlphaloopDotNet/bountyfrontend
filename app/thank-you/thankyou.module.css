@@ -1,0 +1,104 @@
+.container {
+  min-height: 100vh;
+  background-color: #fcfcfc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  text-align: center;
+  max-width: 500px;
+  padding: 40px 20px;
+}
+
+.headerStack {
+  margin-bottom: 40px;
+}
+
+.title {
+  font-family: var(--font-heading); /* Blacklisted Font */
+  color: #c52d2f; /* Brand Red */
+  font-size: 4rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-family: var(--font-main); /* Comfortaa */
+  color: #666;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.iconContainer {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 50px;
+}
+
+.iconCircle {
+  width: 100px;
+  height: 100px;
+  background-color: #c52d2f;
+  border-radius: 30px; /* Squircle shape like mockup */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 15px 35px rgba(197, 45, 47, 0.2);
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.checkIcon {
+  width: 50px;
+  height: 50px;
+  color: white;
+}
+
+.dashBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: white;
+  color: #333;
+  font-family: var(--font-main);
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 16px;
+  border: 2px solid #eee;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.dashBtn:hover {
+  border-color: #c52d2f;
+  color: #c52d2f;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.arrowIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Particles & Animations */
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.particle1 {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 15px;
+  height: 15px;
+  background: #ffce00;
+  border-radius: 50%;
+  animation: ping 2s infinite;
+}
+
+@keyframes ping {
+  75%, 100% { transform: scale(2); opacity: 0; }
+}

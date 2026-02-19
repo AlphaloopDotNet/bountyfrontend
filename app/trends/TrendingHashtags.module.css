@@ -1,0 +1,35 @@
+.chartWrapper {
+  padding: 20px;
+  background: #fff;
+  font-family: 'Comfortaa', sans-serif;
+  width: 100%;
+  max-width: 600px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+.yAxisLabel {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.chartContainer {
+  /* Ye black vertical line banayega jaisa trend4.jpeg mein hai */
+  border-left: 2px solid #000;
+  padding-left: 5px;
+}
+
+.xAxisLabel {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 20px;
+  color: #000;
+}

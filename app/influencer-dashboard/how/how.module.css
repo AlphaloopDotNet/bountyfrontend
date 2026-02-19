@@ -1,0 +1,83 @@
+.sliderContainer {
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 25px;
+  cursor: pointer; /* Screen click to next slide */
+  user-select: none;
+  background-color: transparent; /* Vintage paper background global se aayega */
+}
+
+.slideContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.slideTitle {
+  font-family: var(--font-heading); /* Blacklisted Font */
+  font-size: 38px;
+  color: #2c2c2c;
+  border-bottom: 2.5px solid #2c2c2c;
+  /* Title aur Para ke beech 2 line ka space */
+  margin-bottom: 2.5rem; 
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  /* Paragraphs ke beech 1 line ka space */
+  gap: 1.2rem; 
+  max-width: 380px;
+  text-align: center;
+}
+
+.slideText {
+  font-family: var(--font-main); /* Comfortaa Font */
+  font-size: 19px;
+  line-height: 1.4; 
+  color: #1a1a1a;
+  margin: 0;
+  font-weight: 500;
+}
+
+.pagination {
+  display: flex;
+  gap: 12px;
+  /* Paragraph khatam hone ke 4-5 line baad Dots (...) */
+  margin-top: 5rem; 
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #e5a8a8; /* Faded Red */
+  transition: all 0.3s ease;
+}
+
+.activeDot {
+  background: #e13a42; /* Darker Red */
+  transform: scale(1.1);
+}
+
+/* Mobile Optimization */
+@media (max-width: 480px) {
+  .slideTitle {
+    font-size: 32px;
+    margin-bottom: 2rem;
+  }
+  .slideText {
+    font-size: 17px;
+  }
+  .pagination {
+    margin-top: 4rem; /* Mobile par thoda kam gap */
+  }
+}

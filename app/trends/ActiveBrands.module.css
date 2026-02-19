@@ -1,0 +1,36 @@
+.chartWrapper {
+  padding: 20px;
+  background: #fff;
+  font-family: 'Comfortaa', sans-serif; /* Design font */
+  min-height: 500px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 40px;
+}
+
+/* Custom styling for the legend area */
+.legendContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.colorBox {
+  width: 35px;
+  height: 12px;
+  border-radius: 10px; /* Rounded pill shape from screenshot */
+}

@@ -1,0 +1,257 @@
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: white;
+  z-index: 200;
+  overflow-y: auto;
+  font-family: var(--font-main); /* Comfortaa */
+}
+
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+/* Profile Header */
+.profileHeader {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.imageRing {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 4px solid #CC3333;
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+.mainImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profileName {
+  font-family: var(--font-heading); /* Blacklisted */
+  font-size: 36px;
+  margin: 0 0 5px 0;
+  color: #000;
+  letter-spacing: 0.5px;
+}
+
+.profileBio {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.statsBadges {
+  display: flex;
+  gap: 25px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.badgeItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 10px;
+}
+
+.iconBox {
+  width: 34px;
+  height: 34px;
+  background: #FBBF24;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Action Buttons */
+.actionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.redBtn {
+  background-color: #CC3333;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.divider {
+  border: 0;
+  border-top: 1.5px solid #eee;
+  margin: 20px 0;
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  color: #CC3333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.categoryFlex {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.catBadge {
+  background: #E5E7EB;
+  padding: 12px 0;
+  width: 160px;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  color: #1a1a1a;
+}
+
+/* Engagement UI */
+.engagementHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.yellowInsightsBtn {
+  background: #FBBF24;
+  color: #000;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.progressCircle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.progressVal {
+  font-weight: 900;
+  font-size: 18px;
+  color: #CC3333;
+}
+
+.statSub { font-weight: 800; font-size: 14px; margin-bottom: 4px; color: #000; }
+.statSim { color: #666; font-size: 11px; margin-bottom: 4px; font-weight: 700; }
+.statStatus { font-size: 11px; font-weight: 700; color: #666; }
+.statusText { color: #000; }
+
+/* Upload CTA matching screenshot */
+.uploadCta {
+  width: fit-content;
+  margin: 40px auto;
+  display: block;
+  background: #FBBF24;
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-weight: 800;
+  border: none;
+  font-size: 14px;
+}
+
+/* Similar Influencers */
+.similarScrollContainer {
+  position: relative;
+}
+
+.similarScroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: hidden;
+  padding: 10px 0;
+}
+
+.simCard {
+  flex-shrink: 0;
+  text-align: center;
+  width: 110px;
+}
+
+.simImg {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.simName { font-size: 12px; font-weight: 800; color: #000; }
+
+.scrollArrow {
+  position: absolute;
+  right: -10px;
+  top: 35%;
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.backBtn {
+  width: 100%;
+  background: #FBBF24;
+  padding: 18px;
+  border-radius: 15px;
+  font-weight: 900;
+  font-size: 16px;
+  border: none;
+  margin-top: 50px;
+  cursor: pointer;
+}

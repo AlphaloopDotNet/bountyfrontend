@@ -1,0 +1,68 @@
+.wrapper {
+  background-color: #fff;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.dashboardContainer {
+  max-width: 1000px; /* Analytics dashboard ki width */
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.headerSelection {
+  margin-bottom: 50px;
+}
+
+.mainSelect {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: 1.5px solid #F3E8D6; /* Form wala cream border */
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 700;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  /* Dropdown arrow custom styling */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 18px;
+}
+
+.chartsStack {
+  display: flex;
+  flex-direction: column;
+  gap: 80px; /* Design match karne ke liye bada vertical gap */
+}
+
+.sectionCard {
+  width: 100%;
+  background: #ffffff;
+}
+
+.resetBtn {
+  margin: 60px auto 40px auto;
+  display: block;
+  padding: 12px 25px;
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  color: #666;
+  font-family: var(--font-main);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.resetBtn:hover {
+  background: #eeeeee;
+}

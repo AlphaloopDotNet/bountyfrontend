@@ -1,0 +1,151 @@
+/* Top Navbar */
+.topHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(90deg, #ed1c24 0%, #f7941d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px; /* Left-Right padding */
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.headerCenter {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Icons ke beech gap */
+  padding-right: 10px; /* Right side se safe distance */
+}
+
+.headerIcon {
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.notifBadge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mailIcon {
+  object-fit: contain;
+}
+
+.badgeCount {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: white;
+  color: #ed1c24;
+  font-size: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Sidebar Drawer */
+.sidebarContainer {
+  position: fixed;
+  top: 60px; 
+  left: 0;
+  width: 240px;
+  height: calc(100vh - 60px);
+  background-color: #ffffff;
+  border-right: 1px solid #f7941d;
+  z-index: 999;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebarHidden {
+  transform: translateX(-100%);
+}
+
+.navStack {
+  display: flex;
+  flex-direction: column;
+}
+
+.navLink {
+  display: block;
+  padding: 16px 24px;
+  color: #333;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.2s;
+}
+
+.navLink:hover {
+  background-color: #fffafa;
+  color: #ed1c24;
+}
+
+.activeLink {
+  color: #ed1c24;
+  background-color: #fffafa;
+  border-left: 4px solid #ed1c24;
+}
+
+/* Logout Styling */
+.logoutWrapper {
+  margin-top: auto;
+  padding: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.logoutBtn {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid #ed1c24;
+  color: #ed1c24;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logoutBtn:hover {
+  background: #ed1c24;
+  color: white;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 998;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  /* Is value ko badhao icon ko left laane ke liye */
+  padding-right: 40px; 
+}

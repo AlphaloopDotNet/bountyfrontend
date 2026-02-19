@@ -1,0 +1,47 @@
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.mainContent {
+  flex: 1;
+  /* TopHeader height adjust karne ke liye padding (approx 70px) */
+  padding-top: 80px; 
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 40px 20px;
+  background-color: white;
+}
+
+/* ... Baki saara purana CSS yahan rahega ... */
+
+.title { font-size: 22px; font-weight: 700; text-align: center; margin-bottom: 30px; }
+.field { margin-bottom: 20px; }
+.field label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 15px; }
+.info { color: #ccc; font-size: 12px; float: right; cursor: pointer; }
+.input { width: 100%; padding: 12px; border-radius: 8px; border: 1.5px solid #F3E8D6; outline: none; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.dateInput { display: flex; align-items: center; border: 1.5px solid #F3E8D6; border-radius: 8px; overflow: hidden; background: white; }
+.dateInput input { border: none; padding: 12px; width: 85%; outline: none; }
+.calendarIcon { padding-right: 10px; color: #888; }
+.tagInputWrapper { border: 1.5px solid #F3E8D6; border-radius: 8px; padding: 8px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; position: relative; background: white; }
+.tagsArea { display: flex; flex-wrap: wrap; gap: 5px; }
+.tag { background: #eee; padding: 4px 10px; border-radius: 20px; font-size: 13px; display: flex; align-items: center; gap: 5px; font-weight: 600; }
+.tag button { border: none; background: none; cursor: pointer; font-size: 16px; color: #666; }
+.locationInput { border: none; outline: none; flex: 1; min-width: 120px; padding: 5px; }
+.clearAll { position: absolute; right: 10px; border: none; background: none; font-size: 18px; cursor: pointer; color: #999; }
+.switch { display: flex; border: 1.5px solid #F3E8D6; border-radius: 8px; overflow: hidden; background: white; }
+.option { flex: 1; text-align: center; padding: 12px; font-size: 14px; cursor: pointer; transition: 0.3s; font-weight: 600; }
+.active { background: #CC0000; color: white; }
+.sponsoredRow { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+.checkbox { width: 18px; height: 18px; cursor: pointer; }
+.subLabel { font-size: 14px; color: #333; cursor: pointer; font-weight: 500 !important; }
+.submitBtn { width: 100%; background: #CC0000; color: white; padding: 14px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; margin-top: 10px; font-size: 16px; }

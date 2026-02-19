@@ -1,0 +1,83 @@
+/* threads.module.css */
+
+.threadsBg {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  /* Image gradient matching */
+  background: linear-gradient(180deg, #f9b16e 0%, #f66d44 45%, #e63946 100%);
+}
+
+.threadsBg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+  pointer-events: none;
+}
+
+/* LOGO WRAPPER: Mobile par chota, desktop par bada */
+.logoWrapper {
+  position: relative;
+  z-index: 10;
+  width: 80%;       /* Mobile par screen ka 80% */
+  max-width: 350px; /* Desktop par 350px se bada nahi hoga */
+  height: 120px; 
+  margin-bottom: 40px;
+}
+
+/* BUTTON CONTAINER: Flexible width */
+.buttonContainer {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 420px; 
+  display: flex;
+  flex-direction: column;
+  gap: 18px; 
+  padding: 0 30px; /* Mobile sides padding */
+}
+
+/* BUTTONS: Text size responsive kiya hai */
+.btnWhite {
+  width: 100%;
+  background-color: white;
+  color: #e63946;
+  padding: 16px 0;
+  border-radius: 50px; /* Full pill shape */
+  font-size: 1.3rem;    /* rem use kiya taaki font scale ho sake */
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btnWhite:active {
+  transform: scale(0.96);
+  background-color: #f3f3f3;
+}
+
+/* Media Query for very small phones */
+@media (max-width: 380px) {
+  .logoWrapper {
+    height: 100px;
+    margin-bottom: 30px;
+  }
+  .btnWhite {
+    font-size: 1.1rem;
+    padding: 14px 0;
+  }
+  .buttonContainer {
+    padding: 0 20px;
+  }
+}

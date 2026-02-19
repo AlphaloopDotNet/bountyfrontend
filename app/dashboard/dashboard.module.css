@@ -1,0 +1,199 @@
+/* --- LAYOUT --- */
+.mainWrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.contentArea {
+  flex: 1;
+  padding-left: 80px; /* Sidebar के लिए स्पेस */
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- NEW TOP NAVBAR (Threads Red Bar) --- */
+.topNavbar {
+  width: 100%;
+  height: 60px;
+  background-color: #e31e24; /* Threads Red Color */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.menuBtn {
+  font-size: 26px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.navLogoCenter {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  /* Logo को एकदम बीच में रखने के लिए */
+  margin-right: -20px; 
+}
+
+.navRightIcons {
+  display: flex;
+  gap: 20px;
+  font-size: 22px;
+}
+
+/* --- HERO SECTION --- */
+.heroContainer {
+  position: relative;
+  height: 380px;
+  width: 100%;
+}
+
+.laysLogoWrapper {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.laysLogo {
+  border-radius: 50%;
+  border: 8px solid #FF6B00;
+  background-color: white;
+}
+
+/* --- ACTION BAR (Social Icons & Search) --- */
+.actionBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 45px auto 30px;
+  padding: 0 20px;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 15px;
+}
+
+.iconBox {
+  border: 1px solid #E48E5C;
+  padding: 6px;
+  border-radius: 6px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actionRow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.createBtn {
+  background-color: #FF5C00;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 30px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- CONTENT SECTIONS --- */
+.sectionsWrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+.sectionGap {
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+.sectionTitle {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.sectionTitle::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #eee;
+  margin-top: 15px;
+}
+
+.listWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.campaignGrid, .avatarGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  flex: 1;
+}
+
+.cardItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imageFrame {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.avatarCircle {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.itemName {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.sideArrow {
+  font-size: 32px;
+  margin-left: 20px;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.sideArrow:hover {
+  color: #000;
+}
