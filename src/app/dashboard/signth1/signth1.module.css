@@ -1,0 +1,108 @@
+/* signth1.module.css */
+
+.pageContainer {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #ffffff; /* Pure White Background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.logoHeader {
+  width: 100%;
+  background-color: #ffffff; /* Hataya gradient, ab white hai */
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.logoWrapper {
+  position: relative;
+  width: 200px;
+  height: 90px;
+}
+
+.mainContent {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.mainTitle {
+  color: #d1212a; 
+  font-size: 34px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  font-family: 'Trebuchet MS', sans-serif;
+  text-align: center;
+}
+
+.buttonStack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.redActionBtn {
+  width: 100%;
+  background-color: #d1212a; 
+  color: white;
+  height: 60px; 
+  border-radius: 15px; 
+  border: none;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.iconContainer {
+  position: absolute;
+  left: 20px; 
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerIcon {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Button ke andar ke icons white rahenge */
+}
+
+.btnText {
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+}
+
+.formFooter {
+  margin-top: auto;
+  padding: 40px 0 20px 0;
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.footerLink {
+  color: #000;
+  text-decoration: underline;
+}
+
+.divider {
+  color: #ccc;
+}

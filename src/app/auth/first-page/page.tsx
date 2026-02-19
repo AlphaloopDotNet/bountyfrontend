@@ -8,9 +8,9 @@ import styles from './page.module.css';
 // Font loading setup
 const comfortaa = localFont({
   src: [
-    { path: '../../../public/fonts/Comfortaa-Light.ttf', weight: '300' },
-    { path: '../../../public/fonts/Comfortaa-Regular.ttf', weight: '400' },
-    { path: '../../../public/fonts/Comfortaa-Bold.ttf', weight: '700' },
+    { path: '../../../fonts/Comfortaa-Light.ttf', weight: '300' },
+    { path: '../../../fonts/Comfortaa-Regular.ttf', weight: '400' },
+    { path: '../../../fonts/Comfortaa-Bold.ttf', weight: '700' },
   ],
   variable: '--font-comfortaa',
 });

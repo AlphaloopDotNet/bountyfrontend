@@ -1,7 +1,8 @@
-'use client';
-
+"use client";
+import { useState } from "react";
 import styles from '../influencer.module.css';
 import { useRouter } from 'next/navigation'; // Router import karein
+import { signOut } from "next-auth/react";
 
 interface SidebarContentProps {
   onNavigate: (path: string) => void;
@@ -11,9 +12,9 @@ interface SidebarContentProps {
 
 export default function SidebarContent({ onNavigate, onLogout, onClose }: SidebarContentProps) {
   const router = useRouter(); // Router initialize karein
-
+const [isLoggingOut, setIsLoggingOut] = useState(false);
   // Logout function jo storage clear karke role selection par bhej dega
-  const handleLogoutAction = () => {
+  const handleLogoutAction = async () => {
     // 1. Session clear karein
     localStorage.removeItem("user_session");
     localStorage.removeItem("access_token"); 
@@ -21,7 +22,8 @@ export default function SidebarContent({ onNavigate, onLogout, onClose }: Sideba
 
     // 2. Agar koi custom onLogout prop diya hai toh use chalayein
     if (onLogout) onLogout();
-
+    setIsLoggingOut(true);
+    await signOut({ redirect: false });
     // 3. Main page par bhejein jahan Brand/Influencer buttons hain
     router.push('/'); 
     

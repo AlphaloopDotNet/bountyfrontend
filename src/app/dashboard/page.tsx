@@ -1,71 +1,30 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useRouter } from "next/navigation";
+import { useSession, signOut } from "next-auth/react";
 import Image from "next/image";
-import Sidebar from "../components/Sidebar"; 
+import Sidebar from "../components/Sidebar";
 import styles from "./dashboard.module.css";
 
 export default function DashboardPage() {
   const router = useRouter();
-  const [authorized, setAuthorized] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const { data: session, status } = useSession();
 
-  // ================= AUTHENTICATION CHECK =================
-  useEffect(() => {
-    const checkAuth = async () => {
-      if (typeof window !== "undefined") {
-        const params = new URLSearchParams(window.location.search);
-        const urlEmail = params.get("email");
-        const status = params.get("status");
+  if (status === "loading") {
+    return (
+      <div className={styles.loadingScreen}>
+        <div className={styles.loader}></div>
+        <p>Verifying Brand Access...</p>
+      </div>
+    );
+  }
 
-        // 1. Agar Social Login se success hokar aaya hai
-        if (status === "success" && urlEmail) {
-          localStorage.setItem("userEmail", urlEmail);
-          localStorage.setItem("user_type", "thread");
-          // URL se params hata do taaki refresh pe clean rahe
-          window.history.replaceState({}, document.title, "/dashboard");
-        }
+  if (status === "unauthenticated") {
+    router.replace("/login");
+    return null;
+  }
 
-        let userEmail = localStorage.getItem("userEmail");
-        let userType = localStorage.getItem("user_type");
-
-        // 2. Agar LocalStorage khali hai toh Backend se pucho (Session Check)
-        if (!userEmail) {
-          try {
-            const res = await fetch("http://127.0.0.1:8000/api/current-user/", {
-              method: "GET",
-              headers: { "Accept": "application/json" },
-              credentials: "include",
-            });
-            const data = await res.json();
-
-            if (res.ok && data.email) {
-              localStorage.setItem("userEmail", data.email);
-              localStorage.setItem("user_type", data.user_type || "thread");
-              userEmail = data.email;
-              userType = data.user_type || "thread";
-            }
-          } catch (err) {
-            console.error("Session check failed");
-          }
-        }
-
-        // 3. Final Authorization Logic
-        if (userEmail && (userType === "thread" || userType === "brand")) {
-          setAuthorized(true);
-        } else {
-          // Agar kuch nahi mila toh login pe bhejo
-          router.replace("/dashboard/thlog");
-        }
-        setLoading(false);
-      }
-    };
-
-    checkAuth();
-  }, [router]);
-
-  // ================= STATIC DATA =================
   const campaigns = [
     { id: 1, name: "HeartWork", image: "/images/heartwork.jpeg" },
     { id: 2, name: "Smile Deke Dekho", image: "/images/lays6.jfif" },
@@ -84,22 +43,10 @@ export default function DashboardPage() {
     { id: 3, name: "Amit", image: "/images/fan3.jfif" },
   ];
 
-  // ================= HANDLERS =================
-  const handleLogout = () => {
-    localStorage.clear();
-    router.replace("/dashboard/thlog");
+  const handleLogout = async () => {
+    await signOut({ redirect: false });
+    router.replace("/login");
   };
-
-  if (loading) {
-    return (
-      <div className={styles.loadingScreen}>
-        <div className={styles.loader}></div>
-        <p>Verifying Brand Access...</p>
-      </div>
-    );
-  }
-
-  if (!authorized) return null;
 
   return (
     <div className={styles.mainWrapper}>
@@ -155,17 +102,16 @@ export default function DashboardPage() {
           </div>
           
           <div className={styles.actionButtons}>
-              <button className={styles.createBtn} onClick={() => router.push('/dashboard/create-campaign')}>
-                + Create Campaign
-              </button>
-              <button className={styles.searchIcon}>🔍</button>
+            <button className={styles.createBtn} onClick={() => router.push('/dashboard/create-campaign')}>
+              + Create Campaign
+            </button>
+            <button className={styles.searchIcon}>🔍</button>
           </div>
         </div>
 
         {/* --- CONTENT GRIDS --- */}
         <div className={styles.sectionsWrapper}>
           
-          {/* Campaigns Row */}
           <section className={styles.dataSection}>
             <h2 className={styles.sectionTitle}>ACTIVE CAMPAIGNS</h2>
             <div className={styles.horizontalScroll}>
@@ -181,7 +127,6 @@ export default function DashboardPage() {
             </div>
           </section>
 
-          {/* Ambassadors Row */}
           <section className={styles.dataSection}>
             <h2 className={styles.sectionTitle}>BRAND AMBASSADORS</h2>
             <div className={styles.horizontalScroll}>
@@ -197,7 +142,6 @@ export default function DashboardPage() {
             </div>
           </section>
 
-          {/* Top Fans Row */}
           <section className={styles.dataSection}>
             <h2 className={styles.sectionTitle}>TOP FANS</h2>
             <div className={styles.horizontalScroll}>

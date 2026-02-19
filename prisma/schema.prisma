@@ -1,0 +1,254 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  // output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── Enums ────────────────────────────────────────────────────
+
+enum UserRole {
+  brand
+  influencer
+}
+
+enum BrandSubType {
+  brand_manager
+  company
+  agency
+}
+
+enum AuthProvider {
+  email
+  google
+  facebook
+}
+
+enum SessionEvent {
+  login
+  logout
+  token_refresh
+}
+
+enum AccountStatus {
+  active
+  suspended
+  pending_verification
+}
+
+// ─── User ─────────────────────────────────────────────────────
+
+model User {
+  id            String        @id @default(uuid()) @db.Uuid
+  kindeId       String?       @unique @map("kinde_id")   // optional — only if using Kinde
+  email         String        @unique
+  password      String?                                   // null if social login later
+  username      String?       @unique
+  firstName     String?       @map("first_name")
+  lastName      String?       @map("last_name")
+  avatarUrl     String?       @map("avatar_url")
+  role          UserRole
+  status        AccountStatus @default(active)
+  emailVerified Boolean       @default(false) @map("email_verified")
+  lastLoginAt   DateTime?     @map("last_login_at")      @db.Timestamptz()
+  createdAt     DateTime      @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt     DateTime      @updatedAt @map("updated_at") @db.Timestamptz()
+
+  brandProfile      BrandProfile?
+  influencerProfile InfluencerProfile?
+  authSessions      AuthSession[]
+
+  // NextAuth tables
+  sessions          Session[]
+  accounts          Account[]
+
+  @@index([kindeId])
+  @@index([email])
+  @@index([role])
+  @@map("users")
+}
+
+// ─── BrandProfile ─────────────────────────────────────────────
+
+model BrandProfile {
+  id              String       @id @default(uuid()) @db.Uuid
+  userId          String       @unique @map("user_id") @db.Uuid
+  subType         BrandSubType @map("sub_type")
+  displayName     String?      @map("display_name")
+  website         String?
+  industry        String?
+  description     String?
+  logoUrl         String?      @map("logo_url")
+  instagramHandle String?      @map("instagram_handle")
+  street          String?
+  city            String?
+  state           String?
+  zip             String?
+  country         String?
+  isVerified      Boolean      @default(false) @map("is_verified")
+  createdAt       DateTime     @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt       DateTime     @updatedAt @map("updated_at") @db.Timestamptz()
+
+  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  brandManager BrandManager?
+  company      Company?
+  agency       Agency?
+
+  @@index([userId])
+  @@map("brand_profiles")
+}
+
+// ─── BrandManager ─────────────────────────────────────────────
+
+model BrandManager {
+  id             String   @id @default(uuid()) @db.Uuid
+  brandProfileId String   @unique @map("brand_profile_id") @db.Uuid
+  jobTitle       String?  @map("job_title")
+  department     String?
+  phone          String?
+  linkedinUrl    String?  @map("linkedin_url")
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt      DateTime @updatedAt @map("updated_at") @db.Timestamptz()
+
+  brandProfile BrandProfile @relation(fields: [brandProfileId], references: [id], onDelete: Cascade)
+
+  @@map("brand_managers")
+}
+
+// ─── Company ──────────────────────────────────────────────────
+
+model Company {
+  id             String   @id @default(uuid()) @db.Uuid
+  brandProfileId String   @unique @map("brand_profile_id") @db.Uuid
+  phone          String?
+  legalName      String?  @map("legal_name")
+  registrationNo String?  @map("registration_no")
+  gstNumber      String?  @map("gst_number")
+  employeeCount  Int?     @map("employee_count")
+  annualBudget   Decimal? @map("annual_budget") @db.Decimal(14, 2)
+  foundedYear    Int?     @map("founded_year")
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt      DateTime @updatedAt @map("updated_at") @db.Timestamptz()
+
+  brandProfile BrandProfile @relation(fields: [brandProfileId], references: [id], onDelete: Cascade)
+
+  @@map("companies")
+}
+
+// ─── Agency ───────────────────────────────────────────────────
+
+model Agency {
+  id              String   @id @default(uuid()) @db.Uuid
+  brandProfileId  String   @unique @map("brand_profile_id") @db.Uuid
+  phone           String?
+  legalName       String?  @map("legal_name")
+  registrationNo  String?  @map("registration_no")
+  gstNumber       String?  @map("gst_number")
+  numClients      Int?     @default(0) @map("num_clients")
+  managedBudget   Decimal? @map("managed_budget") @db.Decimal(14, 2)
+  specializations String[]
+  createdAt       DateTime @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt       DateTime @updatedAt @map("updated_at") @db.Timestamptz()
+
+  brandProfile BrandProfile @relation(fields: [brandProfileId], references: [id], onDelete: Cascade)
+
+  @@map("agencies")
+}
+
+// ─── InfluencerProfile ────────────────────────────────────────
+
+model InfluencerProfile {
+  id              String   @id @default(uuid()) @db.Uuid
+  userId          String   @unique @map("user_id") @db.Uuid
+  displayName     String?  @map("display_name")
+  bio             String?
+  avatarUrl       String?  @map("avatar_url")
+  country         String?
+  city            String?
+  categories      String[]
+  languages       String[]
+  instagramHandle String?  @map("instagram_handle")
+  youtubeHandle   String?  @map("youtube_handle")
+  twitterHandle   String?  @map("twitter_handle")
+  tiktokHandle    String?  @map("tiktok_handle")
+  totalFollowers  Int?     @default(0) @map("total_followers")
+  avgEngagement   Decimal? @map("avg_engagement") @db.Decimal(5, 2)
+  minRate         Decimal? @map("min_rate") @db.Decimal(10, 2)
+  isVerified      Boolean  @default(false) @map("is_verified")
+  isAvailable     Boolean  @default(true)  @map("is_available")
+  createdAt       DateTime @default(now()) @map("created_at") @db.Timestamptz()
+  updatedAt       DateTime @updatedAt @map("updated_at") @db.Timestamptz()
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("influencer_profiles")
+}
+
+// ─── AuthSession ──────────────────────────────────────────────
+
+model AuthSession {
+  id        String        @id @default(uuid()) @db.Uuid
+  userId    String        @map("user_id") @db.Uuid
+  event     SessionEvent
+  provider  AuthProvider?
+  ipAddress String?       @map("ip_address")
+  userAgent String?       @map("user_agent")
+  createdAt DateTime      @default(now()) @map("created_at") @db.Timestamptz()
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([createdAt(sort: Desc)])
+  @@map("auth_sessions")
+}
+
+// ─── NextAuth Required Tables ─────────────────────────────────
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String  @db.Uuid
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique @map("session_token")
+  userId       String   @db.Uuid
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}

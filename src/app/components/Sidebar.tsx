@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import styles from "./sidebar.module.css"; 
+import { signOut } from "next-auth/react";
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false); 
@@ -13,12 +14,10 @@ export default function Sidebar() {
 
   const closeSidebar = () => setIsOpen(false);
 
-  const handleLogout = () => {
+ const handleLogout = async () => {
     setIsLoggingOut(true);
-    localStorage.removeItem("user_session");
-    setTimeout(() => {
-      router.push("/"); 
-    }, 800);
+    await signOut({ redirect: false });
+    router.push("/");
   };
 
   const menuLinks = [
