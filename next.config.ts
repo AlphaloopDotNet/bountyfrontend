@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+    dangerouslyAllowSVG: true,
+    formats: ['image/webp'],
     remotePatterns: [
       // Google profile pictures (used when signing in with Google)
       {
@@ -14,6 +16,7 @@ const nextConfig: NextConfig = {
         hostname: "graph.facebook.com",
       },
     ],
+    unoptimized: false,
   },
 };
 
