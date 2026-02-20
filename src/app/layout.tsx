@@ -13,8 +13,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const session = await getServerSession(authOptions);
 
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" suppressContentEditableWarning suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <SessionWrapper session={session}>
           {children}
         </SessionWrapper>

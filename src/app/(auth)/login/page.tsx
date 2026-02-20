@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { signIn, useSession } from 'next-auth/react';
+import { signIn, useSession, getSession } from 'next-auth/react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -18,14 +18,17 @@ export default function LoginPage() {
   const [errorMsg, setErrorMsg] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
 
-  // If already logged in, go to dashboard
+  // If already logged in, redirect based on role
   useEffect(() => {
     if (status === 'authenticated') {
-      router.push('/dashboard');
+      if (session?.user?.role === 'influencer') {
+        router.push('/influencer-dashboard');
+      } else {
+        router.push('/dashboard');
+      }
     }
-  }, [status]);
+  }, [status, session]);
 
-  // Show success message if coming from registration
   useEffect(() => {
     if (searchParams.get('registered') === 'true') {
       setSuccessMsg('Account created! Please log in.');
@@ -40,7 +43,7 @@ export default function LoginPage() {
     const result = await signIn('credentials', {
       email,
       password,
-      redirect: false,   // we handle redirect manually
+      redirect: false,
     });
 
     if (result?.error) {
@@ -49,8 +52,14 @@ export default function LoginPage() {
       return;
     }
 
-    // Success — go to dashboard
-    router.push('/dashboard');
+    // Get fresh session to check role
+    const updatedSession = await getSession();
+
+    if (updatedSession?.user?.role === 'influencer') {
+      router.push('/influencer-dashboard');
+    } else {
+      router.push('/dashboard');
+    }
   };
 
   // ===================== SOCIAL LOGIN — V2 =====================
